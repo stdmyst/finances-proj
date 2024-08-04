@@ -55,12 +55,12 @@ class User(Base):
     
     user_id = mapped_column(Integer, primary_key=True)
     name = mapped_column(String(30))
+    password = mapped_column(String(30))
 
 
-engine = create_engine('postgresql+psycopg2://postgres:_password_@_serveraddr_:_port_/_dbname_', echo=True)
-Session = sessionmaker(bind=engine)
+engine = create_engine('postgresql+psycopg2://:@:/', echo=True)
 
 Base.metadata.create_all(engine)
 
-session = Session()
-session.commit()
+Session = sessionmaker(bind=engine)
+session = Session()    

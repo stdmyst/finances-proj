@@ -45,4 +45,4 @@ def get_transactions(url):
 
 
 if __name__ == "__main__":
-    print(get_transactions("_filepath_"))
+    print(get_transactions(""))
